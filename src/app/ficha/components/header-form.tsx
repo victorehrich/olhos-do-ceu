@@ -22,6 +22,7 @@ import { ClasseDescricao } from "@/app/classes/[nome]/components/classeDescricao
 import { Habilidades } from "@/app/classes/[nome]/components/habilidades";
 import { FichaState } from "../types/state";
 import { Card, CardContent } from "@/components/ui/card";
+import { ScrollArea } from "@/components/ui/scroll-area";
 export const HeaderForm = ({
   formData,
   setFormData,
@@ -74,20 +75,24 @@ export const HeaderForm = ({
                   Ver detalhes da classe
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-3xl w-full">
-                <DialogHeader>
-                  <DialogTitle>{formData.classe}</DialogTitle>
-                </DialogHeader>
-                <div className="mx-auto p-6 space-y-6">
-                  <ClasseDescricao
-                    classeNome={formData.classe}
-                    classe={Classes[formData.classe]}
-                  />
-
-                  <Habilidades
-                    habilidades={Classes[formData.classe].habilidades}
-                  />
-                </div>
+              <DialogContent
+                className="w-full max-w-xs sm:max-w-3xl px-2 sm:px-6"
+                style={{ maxHeight: "90vh" }}
+              >
+                <ScrollArea className="max-h-[75vh] sm:max-h-[80vh]">
+                  <DialogHeader>
+                    <DialogTitle>{formData.classe}</DialogTitle>
+                  </DialogHeader>
+                  <div className="mx-auto p-2 sm:p-6 space-y-6">
+                    <ClasseDescricao
+                      classeNome={formData.classe}
+                      classe={Classes[formData.classe]}
+                    />
+                    <Habilidades
+                      habilidades={Classes[formData.classe].habilidades}
+                    />
+                  </div>
+                </ScrollArea>
               </DialogContent>
             </Dialog>
           )}

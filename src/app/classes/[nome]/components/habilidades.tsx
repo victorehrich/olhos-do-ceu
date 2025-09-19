@@ -59,52 +59,74 @@ export function Habilidades({
   };
 
   return (
-    <Tabs defaultValue={habilidades[0]?.nome}>
-      <TabsList className="flex flex-wrap gap-2">
+    <>
+      <div className="sm:hidden">
+        <p className="font-bold">Habilidades</p>
         {habilidades.map((h) => (
-          <TabsTrigger key={h.nome} value={h.nome} className="cursor-pointer">
-            {h.nome}
-          </TabsTrigger>
-        ))}
-      </TabsList>
-
-      {habilidades.map((h) => (
-        <TabsContent key={h.nome} value={h.nome}>
-          <Card>
+          <Card key={h.nome} className="mb-2">
             <CardHeader>
               <CardTitle>{h.nome}</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2">
-              {h.custo && (
-                <p>
-                  <span className="font-semibold">Custo: </span>
-                  {h.custo}
-                </p>
-              )}
-              {h["pre-requisito"] && (
-                <p>
-                  <span className="font-semibold">Pré-requisito: </span>
-                  {h["pre-requisito"]}
-                </p>
-              )}
-              {h.duração && (
-                <p>
-                  <span className="font-semibold">Duração: </span>
-                  {h.duração}
-                </p>
-              )}
-              {h.alcance && (
-                <p>
-                  <span className="font-semibold">Alcance: </span>
-                  {h.alcance}
-                </p>
-              )}
-              <Separator />
+            <CardContent>
+              {h.custo && <p>Custo: {h.custo}</p>}
               {renderEfeito(h.efeito)}
             </CardContent>
           </Card>
-        </TabsContent>
-      ))}
-    </Tabs>
+        ))}
+      </div>
+      <div className="hidden sm:block">
+        <Tabs defaultValue={habilidades[0]?.nome}>
+          <TabsList className="flex flex-wrap gap-2">
+            {habilidades.map((h) => (
+              <TabsTrigger
+                key={h.nome}
+                value={h.nome}
+                className="cursor-pointer"
+              >
+                {h.nome}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+
+          {habilidades.map((h) => (
+            <TabsContent key={h.nome} value={h.nome} className="space-y-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle>{h.nome}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                  {h.custo && (
+                    <p>
+                      <span className="font-semibold">Custo: </span>
+                      {h.custo}
+                    </p>
+                  )}
+                  {h["pre-requisito"] && (
+                    <p>
+                      <span className="font-semibold">Pré-requisito: </span>
+                      {h["pre-requisito"]}
+                    </p>
+                  )}
+                  {h.duração && (
+                    <p>
+                      <span className="font-semibold">Duração: </span>
+                      {h.duração}
+                    </p>
+                  )}
+                  {h.alcance && (
+                    <p>
+                      <span className="font-semibold">Alcance: </span>
+                      {h.alcance}
+                    </p>
+                  )}
+                  <Separator />
+                  {renderEfeito(h.efeito)}
+                </CardContent>
+              </Card>
+            </TabsContent>
+          ))}
+        </Tabs>
+      </div>
+    </>
   );
 }
