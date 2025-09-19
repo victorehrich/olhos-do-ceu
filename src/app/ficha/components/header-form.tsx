@@ -49,7 +49,7 @@ export const HeaderForm = ({
       {/* Classe */}
       <div className="flex flex-col space-y-4 w-full">
         <Label>Classe</Label>
-        <div className="grid grid-cols-2 gap-2 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full">
           <Select
             value={formData.classe}
             onValueChange={(value) =>

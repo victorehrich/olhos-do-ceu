@@ -26,22 +26,22 @@ export function Foto({
   return (
     <div className="flex flex-col space-y-2 items-center">
       <div
-        className="relative w-24 h-24 cursor-pointer"
+        className="relative w-36 h-36 cursor-pointer"
         onClick={() => inputRef.current?.click()}
       >
         {formData.fotobase64 ? (
           <img
             src={formData.fotobase64}
             alt="Foto do Personagem"
-            className="w-24 h-24 object-cover rounded-md"
+            className="w-36 h-36 object-cover rounded-md"
           />
         ) : (
           <Image
             src="/file.svg"
             alt="Placeholder"
-            className="w-24 h-24 object-cover rounded-md"
-            width={96}
-            height={96}
+            className="w-36 h-36 object-cover rounded-md"
+            width={144}
+            height={144}
           />
         )}
         {formData.fotobase64 && (

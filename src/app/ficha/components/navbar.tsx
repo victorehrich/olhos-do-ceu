@@ -85,23 +85,22 @@ export function FichaNavbar({
   };
 
   return (
-    <div className="flex items-center justify-between p-4 border-b border-gray-200 mb-4">
-      <div className="flex items-center gap-4">
+    <div className="grid grid-cols-1 items-center justify-between p-4 border-b border-gray-200 mb-4">
+      <div className="flex flex-col md:flex-row pb-4 items-center gap-4">
         <Foto formData={formData} setFormData={setFormData} />
-
         {title}
       </div>
-      <div className="flex gap-2">
-        <Button className="cursor-pointer" onClick={handleExport}>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-2 w-full">
+        <Button className="cursor-pointer w-full" onClick={handleExport}>
           📤 Exportar JSON
         </Button>
         <Button
-          className="cursor-pointer"
+          className="cursor-pointer w-full"
           onClick={() => fileInputRef.current?.click()}
         >
           📥 Importar JSON
         </Button>
-        <Button className="cursor-pointer" onClick={handleUndo}>
+        <Button className="cursor-pointer w-full" onClick={handleUndo}>
           ↺ Voltar última alteração
         </Button>
       </div>
