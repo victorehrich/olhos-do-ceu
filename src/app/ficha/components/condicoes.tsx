@@ -54,7 +54,7 @@ export function CondicoesForm({
 }>) {
   const [openSections, setOpenSections] = useState<Record<SectionKey, boolean>>(
     {
-      condicoes: true,
+      condicoes: false,
       venenos: false,
       traumas: false,
       aversoes: false,

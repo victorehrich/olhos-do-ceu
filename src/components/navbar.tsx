@@ -23,9 +23,9 @@ export function ClientNavbar() {
 
   return (
     <header className="border-b">
-      <nav className="container mx-auto px-4 py-2">
-        <NavigationMenu>
-          <NavigationMenuList>
+      <nav className="px-7 py-2 flex md:justify-between justify-center items-center w-full">
+        <NavigationMenu className="w-full">
+          <NavigationMenuList className="flex flex-col md:flex-row gap-2 w-full">
             {routes.map((route) => (
               <NavigationMenuItem key={route.href}>
                 <NavigationMenuLink asChild>
