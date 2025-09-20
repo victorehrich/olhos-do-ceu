@@ -8,7 +8,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-
+import * as Toggle from "@/components/Toggle";
 export function ClientNavbar() {
   const pathname = usePathname();
 
@@ -18,6 +18,7 @@ export function ClientNavbar() {
     { name: "Classes", href: "/classes" },
     { name: "Perícias", href: "/pericias" },
     { name: "Atributos", href: "/atributos" },
+    { name: "Teste de Dificuldade", href: "/teste-dificuldate" },
   ];
 
   return (
@@ -39,6 +40,7 @@ export function ClientNavbar() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
+            <Toggle.Color />
           </NavigationMenuList>
         </NavigationMenu>
       </nav>
