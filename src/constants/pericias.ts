@@ -1,10 +1,4 @@
-import { AtributosPrimariosNomes } from "@/types/atributos";
-import { PericiaNome } from "@/types/pericias";
-
-export type Pericia = {
-  atributo: AtributosPrimariosNomes;
-  descricao: string;
-};
+import { Pericia, PericiaNome, ProeficienciaNivel } from "@/types/pericias";
 
 // Objeto de perícias
 export const PERICIAS: Record<PericiaNome, Pericia> = {
@@ -75,4 +69,25 @@ export const PERICIAS: Record<PericiaNome, Pericia> = {
     descricao:
       "Para convencer outros de forma honesta, negociar e fazer amigos.",
   },
+};
+
+export const PROF_LABELS: Record<ProeficienciaNivel, string> = {
+  0: "Inexperiente",
+  1: "Treinado",
+  2: "Proficiente",
+  3: "Experiente",
+};
+
+export const PROF_BONUS: Record<ProeficienciaNivel, number> = {
+  0: 0,
+  1: 2,
+  2: 3,
+  3: 4,
+};
+
+export const REQUIRED_MARKS: Record<ProeficienciaNivel, number> = {
+  0: 2, // do nível 0 para 1, precisa de 2 marcas
+  1: 3, // do nível 1 para 2, precisa de 3 marcas
+  2: 4, // do nível 2 para 3, precisa de 4 marcas
+  3: Infinity, // nível máximo, não sobe mais
 };

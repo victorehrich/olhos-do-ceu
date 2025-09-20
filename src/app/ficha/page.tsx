@@ -12,6 +12,7 @@ import { AtributosSecundariosForm } from "./components/atributos-secundarios";
 import { CombateForm } from "./components/combate";
 import { Foto } from "./components/foto";
 import { CondicoesForm } from "./components/condicoes";
+import { PericiasForm } from "./components/pericias";
 
 export default function Ficha() {
   const [formData, setFormData] = useState<FichaState>(initialState);
@@ -72,6 +73,7 @@ export default function Ficha() {
             />
             <CombateForm formData={formData} setFormData={setFormData} />
           </div>
+          <PericiasForm formData={formData} setFormData={setFormData} />
           <CondicoesForm formData={formData} setFormData={setFormData} />
         </CardContent>
       </Card>

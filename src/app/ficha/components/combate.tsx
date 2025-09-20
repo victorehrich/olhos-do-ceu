@@ -67,7 +67,7 @@ export function CombateForm({
   };
 
   return (
-    <Card className="p-4">
+    <Card className="p-6 space-y-6">
       <CardHeader>
         <CardTitle className="text-2xl">Combate</CardTitle>
       </CardHeader>

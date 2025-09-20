@@ -45,25 +45,25 @@ export function AtributosPrimarios({
         <CardTitle className="text-2xl">Atributos Primários</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
-        {Object.entries(formData.atributos).map(([nome, valor]) => (
-          <div
-            key={nome}
-            className="flex flex-row justify-between items-center"
-          >
-            <Label className="w-full">{nome}</Label>
-            <Input
-              className="w-16"
-              type="number"
-              min={0}
-              max={4}
-              value={valor}
-              onChange={(e) =>
-                updateAtributo(
-                  nome as AtributosPrimariosNomes,
-                  Number(e.target.value)
-                )
-              }
-            />
+        {Object.entries(formData.atributos).map(([nome, valor], index) => (
+          <div key={nome}>
+            {index > 0 && <hr className="my-2" />}
+            <div className="flex flex-row justify-between items-center">
+              <Label className="w-full">{nome}</Label>
+              <Input
+                className="w-16"
+                type="number"
+                min={0}
+                max={4}
+                value={valor}
+                onChange={(e) =>
+                  updateAtributo(
+                    nome as AtributosPrimariosNomes,
+                    Number(e.target.value)
+                  )
+                }
+              />
+            </div>
           </div>
         ))}
       </CardContent>

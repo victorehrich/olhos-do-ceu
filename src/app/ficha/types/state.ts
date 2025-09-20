@@ -1,5 +1,6 @@
 import { AtributosPrimariosNomes } from "@/types/atributos";
 import { ClassesNomes } from "@/types/classes";
+import { PericiaNome, ProeficienciaNivel } from "@/types/pericias";
 
 export type FichaHeaderState = {
   nomePersonagem: string;
@@ -25,7 +26,18 @@ export type CondicoesState = {
   aversoes: string[]; // nomes das aversões aplicadas
 };
 
+export type PericiaState = {
+  marcas: number; // total de marcas acumuladas
+  nivel: ProeficienciaNivel; // calculado a partir das marcas
+};
+
+export type PericiasState = {
+  pericias: Record<PericiaNome, PericiaState>;
+};
+
+// ----- FICHA COMPLETA -----
 export type FichaState = FichaHeaderState & {
   atributos: AtributosState;
 } & CombateState &
-  CondicoesState;
+  CondicoesState &
+  PericiasState;

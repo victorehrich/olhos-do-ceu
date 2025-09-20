@@ -82,7 +82,7 @@ export function AtributosSecundariosForm({
   }, [formData.atributos, formData.classe, setAtributosSecundarios]);
 
   return (
-    <Card className="p-4">
+    <Card className="p-6 space-y-6">
       <CardHeader>
         <CardTitle className="text-2xl">Atributos Secundários</CardTitle>
       </CardHeader>
