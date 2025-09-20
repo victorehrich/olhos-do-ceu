@@ -19,6 +19,7 @@ export function ClientNavbar() {
     { name: "Perícias", href: "/pericias" },
     { name: "Atributos", href: "/atributos" },
     { name: "Teste de Dificuldade", href: "/teste-dificuldate" },
+    { name: "Armas", href: "/armas" },
   ];
 
   return (

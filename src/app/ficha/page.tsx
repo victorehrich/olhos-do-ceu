@@ -13,6 +13,12 @@ import { CombateForm } from "./components/combate";
 import { Foto } from "./components/foto";
 import { CondicoesForm } from "./components/condicoes";
 import { PericiasForm } from "./components/pericias";
+import { ArmasForm } from "./components/armas";
+import { MagiasForm } from "./components/magias";
+import { HabilidadesForm } from "./components/habilidades";
+import { InventarioForm } from "./components/inventario";
+import { HistoriaForm } from "./components/historia";
+import { AnotacoesForm } from "./components/anotacoes";
 
 export default function Ficha() {
   const [formData, setFormData] = useState<FichaState>(initialState);
@@ -67,14 +73,22 @@ export default function Ficha() {
           <HeaderForm formData={formData} setFormData={setFormData} />
           <AtributosPrimarios formData={formData} setFormData={setFormData} />
           <div className="flex flex-col gap-12">
+            <CombateForm formData={formData} setFormData={setFormData} />
             <AtributosSecundariosForm
               formData={formData}
               setFormData={setFormData}
             />
-            <CombateForm formData={formData} setFormData={setFormData} />
           </div>
+          <ArmasForm formData={formData} setFormData={setFormData} />
           <PericiasForm formData={formData} setFormData={setFormData} />
           <CondicoesForm formData={formData} setFormData={setFormData} />
+          <div className="flex flex-col gap-6">
+            <HabilidadesForm formData={formData} setFormData={setFormData} />
+            <MagiasForm formData={formData} setFormData={setFormData} />
+          </div>
+          <InventarioForm formData={formData} setFormData={setFormData} />
+          <HistoriaForm formData={formData} setFormData={setFormData} />
+          <AnotacoesForm formData={formData} setFormData={setFormData} />
         </CardContent>
       </Card>
     </div>

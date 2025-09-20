@@ -1,3 +1,4 @@
+import { Arma } from "@/types/arma";
 import { AtributosPrimariosNomes } from "@/types/atributos";
 import { ClassesNomes } from "@/types/classes";
 import { PericiaNome, ProeficienciaNivel } from "@/types/pericias";
@@ -35,9 +36,39 @@ export type PericiasState = {
   pericias: Record<PericiaNome, PericiaState>;
 };
 
+export type ArmasState = {
+  armas: Arma[];
+};
+
+export type MagiasState = {
+  magias: string;
+};
+
+export type InventariosState = {
+  inventario: string;
+};
+
+export type HabilidadesState = {
+  habilidades: string;
+};
+
+export type HistoriasState = {
+  historia: string;
+};
+
+export type AnotacoesState = {
+  anotacoes: string;
+};
+
 // ----- FICHA COMPLETA -----
 export type FichaState = FichaHeaderState & {
   atributos: AtributosState;
 } & CombateState &
   CondicoesState &
-  PericiasState;
+  PericiasState &
+  ArmasState &
+  MagiasState &
+  InventariosState &
+  HabilidadesState &
+  HistoriasState &
+  AnotacoesState;

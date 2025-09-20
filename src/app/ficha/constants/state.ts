@@ -37,4 +37,10 @@ export const initialState: FichaState = {
     Intimidação: { nivel: 0, marcas: 0 },
     Persuasão: { nivel: 0, marcas: 0 },
   },
+  armas: [],
+  magias: "",
+  inventario: "",
+  habilidades: "",
+  historia: "",
+  anotacoes: "",
 };
