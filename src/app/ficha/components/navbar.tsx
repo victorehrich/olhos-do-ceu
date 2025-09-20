@@ -84,13 +84,18 @@ export function FichaNavbar({
     reader.readAsText(file);
   };
 
+  const handlerClear = () => {
+    setFormData(initialState);
+    localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(initialState));
+  };
+
   return (
     <div className="grid grid-cols-1 items-center justify-between p-4 border-b border-gray-200 mb-4">
       <div className="flex flex-col md:flex-row pb-4 items-center gap-4">
         <Foto formData={formData} setFormData={setFormData} />
         {title}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-2 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 w-full">
         <Button className="cursor-pointer w-full" onClick={handleExport}>
           📤 Exportar JSON
         </Button>
@@ -102,6 +107,9 @@ export function FichaNavbar({
         </Button>
         <Button className="cursor-pointer w-full" onClick={handleUndo}>
           ↺ Voltar última alteração
+        </Button>
+        <Button className="cursor-pointer w-full" onClick={handlerClear}>
+          🧹 Limpar Ficha
         </Button>
       </div>
       <input
